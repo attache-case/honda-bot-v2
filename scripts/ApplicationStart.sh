@@ -4,4 +4,4 @@
 cd /home/ec2-user/honda-bot-v2/
 source ~/py-envs/honda-bot/bin/activate
 pip install -r requirements.txt
-nohup python main.py &
+nohup python main.py > out.log 2> error.log &
