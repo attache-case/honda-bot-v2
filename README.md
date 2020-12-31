@@ -22,8 +22,8 @@ https://qiita.com/hitomatagi/items/e63dd8c4b879de156628
 https://qiita.com/yukofeb/items/e077fc8755416c904032#appspec%E4%BD%9C%E6%88%90
 
 ## Requirements
-- Python < 3.7
-- discord.py==1.0.1
+- Python < 3.7(checking)
+- discord.py==1.0.1(checking)
 
 ## Patch Notes
 `v1.1.0`
