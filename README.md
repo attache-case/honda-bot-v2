@@ -16,8 +16,8 @@ python main.py
 
 
 ## EC2インスタンスへの操作
-1. python3.8.1のインストール
-https://qiita.com/hitomatagi/items/e63dd8c4b879de156628
+1. python3のインストール
+https://qiita.com/yuta-38/items/12fbb94363dd00b4e299
 1. codedeploy-agentのインストール
 https://qiita.com/yukofeb/items/e077fc8755416c904032#appspec%E4%BD%9C%E6%88%90
 
