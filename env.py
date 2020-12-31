@@ -2,7 +2,7 @@ import os
 import textwrap
 import datetime
 
-DISCORD_TOKEN = os.environ.get("DISCORD_TOKEN")
+DISCORD_ACCESS_TOKEN = os.environ.get("DISCORD_ACCESS_TOKEN")
 
 DATABASE_URL = os.environ['DATABASE_URL']
 

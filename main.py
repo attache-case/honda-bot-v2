@@ -38,4 +38,4 @@ async def on_message(message):
 
     await game_rps.process_message(client, message)
 
-client.run(env.DISCORD_TOKEN)
+client.run(env.DISCORD_ACCESS_TOKEN)
