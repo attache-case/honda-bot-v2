@@ -14,6 +14,13 @@ python main.py
 1. Set environment variable `DISCORD_TOKEN` to your bot token
 1. Add channel named `honda-bot` to your server
 
+
+## EC2インスタンスへの操作
+1. python3.8.1のインストール
+https://qiita.com/hitomatagi/items/e63dd8c4b879de156628
+1. codedeploy-agentのインストール
+https://qiita.com/yukofeb/items/e077fc8755416c904032#appspec%E4%BD%9C%E6%88%90
+
 ## Requirements
 - Python < 3.7
 - discord.py==1.0.1
