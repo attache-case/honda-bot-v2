@@ -9,7 +9,7 @@ APP_NAME=$(aws --region ${REGION} ec2 describe-instances --instance-ids ${INSTAN
 APP_ENV=$(aws --region ${REGION} ec2 describe-instances --instance-ids ${INSTANCE_ID} --query "Reservations[0].Instances[0].Tags[?Key=='Env'].Value" --output text)
 FILENAME="/home/ec2-user/.env"
 
-SSM_PARAMS=$(aws --region ${REGION} ssm get-parameters-by-path -- path "/${APP_NAME}/${APP_ENV}" --with-decryption)
+SSM_PARAMS=$(aws --region ${REGION} ssm get-parameters-by-path --path "/${APP_NAME}/${APP_ENV}" --with-decryption)
 for params in $(echo $SSM_PARAMS | jq -r '.Parameters[] | .Name + "=" + .Value'); do
     echo ${params##*/}
 done > ${FILENAME}
