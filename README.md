@@ -20,6 +20,9 @@ python main.py
 https://qiita.com/yuta-38/items/12fbb94363dd00b4e299
 1. codedeploy-agentのインストール
 https://qiita.com/yukofeb/items/e077fc8755416c904032#appspec%E4%BD%9C%E6%88%90
+1. jqのインストール
+https://qiita.com/toshiro3/items/37821bdcc50c8b6d06dc
+
 
 ## Requirements
 - Python < 3.7(checking)
