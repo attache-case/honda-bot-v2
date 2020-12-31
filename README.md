@@ -16,7 +16,7 @@ python main.py
 
 
 ## EC2インスタンスへの操作
-1. python3のインストール
+1. python3のインストール(仮想環境)
 https://qiita.com/yuta-38/items/12fbb94363dd00b4e299
 1. codedeploy-agentのインストール
 https://qiita.com/yukofeb/items/e077fc8755416c904032#appspec%E4%BD%9C%E6%88%90
