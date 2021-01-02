@@ -1,6 +1,9 @@
-import discord
-import env
 import lib
+import env
+import discord
+import sys
+print(sys.version_info)
+
 
 client = discord.Client()
 game_rps = lib.GameRPS()

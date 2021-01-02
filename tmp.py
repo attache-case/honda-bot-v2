@@ -1,7 +1,0 @@
-import os
-
-DISCORD_ACCESS_TOKEN = os.environ.get('DISCORD_ACCESS_TOKEN')
-print('test DISCORD_ACCESS_TOKEN' + DISCORD_ACCESS_TOKEN)
-
-DATABASE_URL = os.environ.get('DATABASE_URL')
-print('test DATABASE_URL' + DATABASE_URL)
