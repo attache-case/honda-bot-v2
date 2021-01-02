@@ -23,4 +23,6 @@ done
 cd /home/ec2-user/honda-bot-v2/
 source ~/.venv/honda-bot/bin/activate
 pip install -r requirements.txt
+pip -V
+python -V
 sudo nohup python main.py &
