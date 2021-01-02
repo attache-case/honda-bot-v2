@@ -3,10 +3,8 @@ import textwrap
 import datetime
 
 DISCORD_ACCESS_TOKEN = os.environ.get('DISCORD_ACCESS_TOKEN')
-print('env DISCORD_ACCESS_TOKEN' + DISCORD_ACCESS_TOKEN)
 
 DATABASE_URL = os.environ.get('DATABASE_URL')
-print('env DATABASE_URL' + DATABASE_URL)
 
 DISCORD_VOICE_CH_ID = '348823033005211652'
 
