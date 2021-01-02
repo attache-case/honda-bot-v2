@@ -27,3 +27,4 @@ pip install -r requirements.txt
 python -V
 pip -V
 python tmp.py
+echo END
