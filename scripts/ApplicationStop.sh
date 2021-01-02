@@ -1,3 +1,3 @@
 #!/bin/sh
 
-pkill -KILL -f "python main.py"
+# pkill -KILL -f "python main.py"
