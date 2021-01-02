@@ -13,7 +13,7 @@ permissions:
       - file
 hooks:
   ApplicationStop:
-    - location: /home/ec2-user/honda-bot-v2/scripts/ApplicationStop.sh
+    - location: scripts/ApplicationStop.sh
       timeout: 60
       runas: ec2-user
   BeforeInstall:
