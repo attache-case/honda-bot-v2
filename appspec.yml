@@ -12,6 +12,10 @@ permissions:
     type:
       - file
 hooks:
+  ApplicationStop:
+    - location: scripts/ApplicationStop.sh
+      timeout: 60
+      runas: ec2-user
   BeforeInstall:
     - location: scripts/BeforeInstall.sh
       timeout: 60
