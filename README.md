@@ -16,8 +16,10 @@ python main.py
 
 
 ## EC2インスタンスへの操作
+sudo yum -y install gcc wget curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-ExtUtils-MakeMaker autoconf bzip2 bzip2-devel libbz2-dev openssl openssl-devel readline readline-devel sqlite-devel
 1. python3のインストール(仮想環境)
 https://qiita.com/yuta-38/items/12fbb94363dd00b4e299
+https://messefor.hatenablog.com/entry/2020/08/22/181519
 1. codedeploy-agentのインストール
 https://qiita.com/yukofeb/items/e077fc8755416c904032#appspec%E4%BD%9C%E6%88%90
 1. jqのインストール

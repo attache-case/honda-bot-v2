@@ -21,6 +21,6 @@ for param_data in $(echo $SSM_PARAMS | jq -c '.Parameters[] | { Name, Value }');
 done
 
 cd /home/ec2-user/honda-bot-v2/
-source ~/py-envs/honda-bot/bin/activate
+source ~/.venv/honda-bot/bin/activate
 pip install -r requirements.txt
 sudo nohup python main.py &
