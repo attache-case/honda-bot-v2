@@ -7,6 +7,7 @@ game_rps = lib.GameRPS()
 
 active_ch = None
 
+
 @client.event
 async def on_ready():
     global active_ch
@@ -22,6 +23,7 @@ async def on_ready():
     if active_ch != None:
         pass
         # await active_ch.send(env.get_hello_message())
+
 
 @client.event
 async def on_message(message):
