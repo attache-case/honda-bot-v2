@@ -78,16 +78,17 @@ class Honda(object):
 
     async def process_rps(self, message):
         player = message.author
+        msg_prefix = player.mention
         uid = player.id
         uname = player.name
         hands = GameRPS.parse_hands(message.content)
         if hands == Hand(0):
             return
         if GameRPS.has_played_today(uid):
-            await self.send_message(constants.MSG_DAILY_LIMIT_EXCEEDED)
+            await self.send_message(msg_prefix + '\n' + constants.MSG_DAILY_LIMIT_EXCEEDED)
             return
         if not GameRPS.is_valid_hand(hands):
-            await self.send_message(constants.MSG_TOO_MANY_HANDS)
+            await self.send_message(msg_prefix + '\n' + constants.MSG_TOO_MANY_HANDS)
             return
         hand = hands
         result = GameRPS.decide_result()
@@ -97,7 +98,7 @@ class Honda(object):
         rps_history = RpsHistory.create(uid, hand, result)
         update_rps_stat(uid, hand, result, rps_history.created_at)
 
-        await self.respond_rps(hand, result)
+        await self.respond_rps(hand, result, msg_prefix)
 
     async def respond_stats(self, player):
         uid = player.id
@@ -167,8 +168,9 @@ class Honda(object):
         msg = 'こんばんは、' + message.author.name + 'さん！'
         await self.send_message(msg)
 
-    async def respond_rps(self, hand, result):
-        msg = GameRPS.create_rps_battle_string(
+    async def respond_rps(self, hand, result, msg_prefix=''):
+        msg = msg_prefix + '\n'
+        msg += GameRPS.create_rps_battle_string(
             hand, result, opponent_name='HONDA')
         msg += '\n'
         msg += RESULT_HAND_MSG_MAP[result][hand]

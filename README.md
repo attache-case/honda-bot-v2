@@ -1,5 +1,12 @@
 ﻿# honda-bot
 
+# TODO
+- EC2へのデプロイフロー確立（実行・停止・再実行）
+- DB処理のアトミック化
+- DBのインバウンド・アウトバウンドアクセス制御
+- 機能拡張（手の統計・連続ログインボーナス）
+- パッケージ構造見直し
+
 # About
 - じゃんけんをしてくれる本田ロイドです
 - Discordの`honda-bot`チャンネルで「ぐー」とか発言するとじゃんけんをしてくれます
@@ -26,9 +33,11 @@ https://qiita.com/yukofeb/items/e077fc8755416c904032#appspec%E4%BD%9C%E6%88%90
 https://qiita.com/toshiro3/items/37821bdcc50c8b6d06dc
 
 
-## Requirements
-- Python < 3.7(checking)
-- discord.py==1.0.1(checking)
+## Requirements()
+- Python > 3.3 <= 3.6.6(checking)
+- discord.py==1.5.1(checking)
+- SQLAlchemy==1.3.22
+- PyMySQL==0.10.1
 
 ## Patch Notes
 `v1.1.0`
