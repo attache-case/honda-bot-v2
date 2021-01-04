@@ -1,12 +1,14 @@
-import lib
-import env
 import discord
-import sys
-print(sys.version_info)
+import logging
 
+from app.controllers.conversation import process_message
+
+import settings
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 client = discord.Client()
-game_rps = lib.GameRPS()
 
 active_ch = None
 
@@ -21,26 +23,22 @@ async def on_ready():
     # find channel to respond
     for guild in client.guilds:
         for channel in guild.channels:
-            if channel.name == env.ACTIVE_CHANNEL_NAME:
+            if channel.name == settings.active_channel_name:
                 active_ch = channel
     if active_ch != None:
         pass
-        # await active_ch.send(env.get_hello_message())
 
 
 @client.event
 async def on_message(message):
+    # logger.info(
+    #     f'action=on_message author={message.author}, channel={message.channel}, message={message.content}')
     if client.user == message.author:
         return
     if active_ch == None or message.channel != active_ch:
         return
 
-    await lib.respond_greeting(message)
+    await process_message(message)
 
-    await lib.respond_stats(message)
-
-    await lib.respond_allstats(message)
-
-    await game_rps.process_message(client, message)
-
-client.run(env.DISCORD_ACCESS_TOKEN)
+if __name__ == '__main__':
+    client.run(settings.discord_access_token)
