@@ -106,8 +106,7 @@ class Honda(object):
         if rps_stat is None:
             msg = textwrap.dedent(f"""\
                 {player.name}さんのデータは存在しないみたいやで！
-                一回じゃんけんしてみようや！
-            """)
+                一回じゃんけんしてみようや！""")
             await self.send_message(msg)
         else:
             wins = rps_stat.result_win_cnt
@@ -119,8 +118,7 @@ class Honda(object):
             cont_logins = rps_stat.continuous_login_cnt
             msg = textwrap.dedent(f"""\
                 {player.name}さんの戦績：
-                {wins}勝{loses}敗 => 勝率 {(wins/total):.2%}
-            """)
+                {wins}勝{loses}敗 => 勝率 {(wins/total):.2%}""")
             if cont_wins >= 2:
                 msg += '\n'
                 msg += f'{cont_wins}連勝中'
