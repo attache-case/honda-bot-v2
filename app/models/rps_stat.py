@@ -10,7 +10,7 @@ from sqlalchemy.exc import IntegrityError
 from app.models.base import Base
 from app.models.base import session_scope
 from app.models.enum_rps import Hand, Result
-from utils.utils import get_prev_refresh_utc
+from utils.utils import get_prev_refresh_utc_from
 
 logger = logging.getLogger(__name__)
 
@@ -82,7 +82,7 @@ class RpsStat(Base):
             self.result_draw_cnt += 1
 
         if self.last_battle_at is not None:
-            td_from_last_battle = get_prev_refresh_utc(
+            td_from_last_battle = get_prev_refresh_utc_from(
                 current_battle_time) - self.last_battle_at
             if td_from_last_battle.days == 0:
                 self.continuous_login_cnt += 1

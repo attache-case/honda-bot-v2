@@ -14,10 +14,10 @@ def get_next_refresh_utc():
 
 def get_prev_refresh_utc():
     now = datetime.utcnow()
-    return get_prev_refresh_utc(now)
+    return get_prev_refresh_utc_from(now)
 
 
-def get_prev_refresh_utc(now):
+def get_prev_refresh_utc_from(now):
     if now.hour < settings.refresh_hour_utc:
         return now.replace(day=now.day-1, hour=settings.refresh_hour_utc, minute=0, second=0, microsecond=0)
     else:
