@@ -82,7 +82,7 @@ class RpsStat(Base):
 
         if self.last_battle_at is not None:
             td_from_last_battle = current_battle_time - self.last_battle_at
-            if td_from_last_battle.day == 0:
+            if td_from_last_battle.days == 0:
                 self.continuous_login_cnt += 1
             else:
                 self.continuous_login_cnt = 1
