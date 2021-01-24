@@ -9,7 +9,7 @@ def get_next_refresh_utc():
     if now.hour < settings.refresh_hour_utc:
         return now.replace(hour=settings.refresh_hour_utc, minute=0, second=0, microsecond=0)
     else:
-        return now.replace(day=now.day+1, hour=settings.refresh_hour_utc, minute=0, second=0, microsecond=0)
+        return now.replace(hour=settings.refresh_hour_utc, minute=0, second=0, microsecond=0) + timedelta(days=1)
 
 
 def get_prev_refresh_utc():
@@ -19,7 +19,7 @@ def get_prev_refresh_utc():
 
 def get_prev_refresh_utc_from(now):
     if now.hour < settings.refresh_hour_utc:
-        return now.replace(day=now.day-1, hour=settings.refresh_hour_utc, minute=0, second=0, microsecond=0)
+        return now.replace(day=now.day, hour=settings.refresh_hour_utc, minute=0, second=0, microsecond=0) - timedelta(days=1)
     else:
         return now.replace(hour=settings.refresh_hour_utc, minute=0, second=0, microsecond=0)
 
