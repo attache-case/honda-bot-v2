@@ -45,8 +45,10 @@ def read_famous_saying(path):
     famous_saying_list = []
     with open(path, 'r', encoding='utf-8') as f:
         one_saying = []
-        while line:
+        while True:
             line = f.readline()
+            if not line:
+                break
             line = line.rstrip()
             if line == '-----':
                 famous_saying_list.append(one_saying)
