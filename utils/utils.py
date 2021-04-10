@@ -40,3 +40,19 @@ def has_keyword(text, keyword_list):
             has_kw = True
             break
     return has_kw
+
+def read_famous_saying(path):
+    famous_saying_list = []
+    with open(path, 'r', encoding='utf-8') as f:
+        one_saying = []
+        while True:
+            line = f.readline()
+            if not line:
+                break
+            line = line.rstrip()
+            if line == '-----':
+                famous_saying_list.append(one_saying)
+                one_saying = []
+                continue
+            one_saying.append(line)
+    return famous_saying_list
