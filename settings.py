@@ -5,15 +5,9 @@ conf = configparser.ConfigParser()
 conf.read('settings.ini')
 
 discord_access_token = os.environ.get('DISCORD_ACCESS_TOKEN')
-active_channel_name = conf['discord']['active_channel_name']
+active_channel_name = os.environ.get('ACTIVE_CHANNEL_NAME')
 
-db_user = os.environ.get('DB_USER')
-db_password = os.environ.get('DB_PASSWORD')
-db_hostname = os.environ.get('DB_HOSTNAME')
-
-db_dbname = conf['db']['dbname']
-db_dialect = conf['db']['dialect']
-db_driver = conf['db']['driver']
+db_url = os.environ.get('DATABASE_URL')
 
 win_rate = float(conf['honda']['win_rate'])
 refresh_hour = int(conf['honda']['refresh_hour'])
