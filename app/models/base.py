@@ -11,7 +11,7 @@ from contextlib import contextmanager
 logger = logging.getLogger(__name__)
 Base = declarative_base()
 engine = create_engine(
-    f'{settings.db_url}?charset=utf8', echo=True)
+    f'{settings.db_url}?charset=utf8&sslmode=require', echo=True)
 Session = scoped_session(sessionmaker(bind=engine))
 lock = threading.Lock()
 
