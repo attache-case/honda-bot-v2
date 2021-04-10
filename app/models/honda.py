@@ -1,12 +1,14 @@
 import textwrap
-from app.models.rps_stat import RpsStat, update_rps_stat
 import discord
 import logging
+import random
 
 from app.models.enum_rps import Hand, Result
 from app.models.game_rps import GameRPS
 from app.models.rps_history import RpsHistory
+from app.models.rps_stat import RpsStat, update_rps_stat
 from app.models.user import User, update_user
+from utils.utils import read_famous_saying
 
 import constants
 
@@ -43,6 +45,7 @@ RESULT_HAND_MSG_MAP = {
 class Honda(object):
 
     ch = None
+    famous_saying_honda = read_famous_saying('contents/txts/famous_saying_honda.txt')
 
     async def send_message(self, msg):
         await self.ch.send(msg)
@@ -50,6 +53,11 @@ class Honda(object):
     async def send_message_with_files(self, msg, filepaths):
         files = [discord.File(filepath) for filepath in filepaths]
         await self.ch.send(msg, files=files)
+
+    async def initial_famous_saying(self, ch):
+        self.ch = ch
+        msg = '\n'.join(random.choice(self.famous_saying_honda))
+        await self.send_message(msg)
 
     async def process_message(self, message):
         self.ch = None

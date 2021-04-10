@@ -1,7 +1,7 @@
 import discord
 import logging
 
-from app.controllers.conversation import process_message
+from app.controllers.conversation import initial_message, process_message
 
 import settings
 
@@ -25,6 +25,7 @@ async def on_ready():
         for channel in guild.channels:
             if channel.name == settings.active_channel_name:
                 active_ch = channel
+                await initial_message(active_ch)
     if active_ch != None:
         pass
 
